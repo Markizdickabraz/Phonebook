@@ -2,7 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { filtredContacts } from "redux/contacts/selectors";
 import { ConstactListStyled, ListItemStyled } from './contactListStyled';
 import { deleteContatcs } from "redux/contacts/operations";
-    
+import { Button } from "@mui/material";
+
 export default function ContactList() {
 
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ export default function ContactList() {
                     >
                 {filtredComponents.map(item =>
                 (
-                         <ListItemStyled key={item.name} > <span> {item.name} : {item.number}</span> <button type="button" onClick = {()=>{deleteClick(item.id)}}>Delete</button></ListItemStyled>
+                         <ListItemStyled style={{display:'flex', gap:'12px', alignItems:'center'}} key={item.name} > <span> {item.name} : {item.number}</span> <Button variant="contained" type="button" onClick = {()=>{deleteClick(item.id)}}>Delete</Button></ListItemStyled>
                          )
                          )}
                          </ConstactListStyled>

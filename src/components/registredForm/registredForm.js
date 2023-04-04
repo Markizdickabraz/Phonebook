@@ -1,6 +1,6 @@
+import { FormLabel, Input,Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-// import css from './RegisterForm.module.css';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -18,22 +18,21 @@ export const RegisterForm = () => {
     form.reset();
   };
 
-
   return (
-    <form  onSubmit={handleSubmit} autoComplete="off">
-      <label >
+    <form style={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: '50px' }} onSubmit={handleSubmit} autoComplete="off">
+      <FormLabel >
         Username
-        <input type="text" name="name" />
-      </label>
-      <label >
+        <Input style={{paddingLeft:'12px'}}type="text" name="name" />
+      </FormLabel>
+      <FormLabel >
         Email
-        <input type="email" name="email" />
-      </label>
-      <label >
+        <Input style={{paddingLeft:'12px'}} type="email" name="email" />
+      </FormLabel>
+      <FormLabel >
         Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Register</button>
+        <Input style={{paddingLeft:'12px'}} type="password" name="password" />
+      </FormLabel>
+      <Button style={{width:'120px'}} variant="contained">Register</Button>
     </form>
   );
 };
