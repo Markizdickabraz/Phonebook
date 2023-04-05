@@ -32,7 +32,7 @@ export const RegisterForm = () => {
         Password
         <Input style={{paddingLeft:'12px'}} type="password" name="password" />
       </FormLabel>
-      <Button style={{width:'120px'}} variant="contained">Register</Button>
+      <Button style={{width:'120px'}} variant="contained" type='sumbit'>Register</Button>
     </form>
   );
 };
